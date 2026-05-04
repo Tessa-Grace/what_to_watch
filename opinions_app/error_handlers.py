@@ -1,6 +1,5 @@
 # what_to_watch/opinions_app/error_handlers.py
 
-<<<<<<< HEAD
 # Новый импорт — jsonify.
 from flask import jsonify, render_template
 
@@ -27,25 +26,12 @@ def invalid_api_usage(error):
     return jsonify(error.to_dict()), error.status_code
 
 
-=======
-from flask import render_template
-
-from . import app, db
-
->>>>>>> 31e6075bf6b15c07b2bcf139bf6353ed248401b9
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
 
-<<<<<<< HEAD
 
 @app.errorhandler(500)
 def internal_error(error):
     db.session.rollback()
     return render_template('500.html'), 500
-=======
-@app.errorhandler(500)
-def internal_error(error):
-    db.session.rollback()
-    return render_template('500.html'), 500
->>>>>>> 31e6075bf6b15c07b2bcf139bf6353ed248401b9

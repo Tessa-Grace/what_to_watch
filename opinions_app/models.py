@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 from . import db
 from datetime import datetime, UTC
-=======
-from datetime import datetime
-
-from . import db
->>>>>>> 31e6075bf6b15c07b2bcf139bf6353ed248401b9
 
 
 class Opinion(db.Model):
@@ -13,7 +7,6 @@ class Opinion(db.Model):
     title = db.Column(db.String(128), nullable=False)
     text = db.Column(db.Text, unique=True, nullable=False)
     source = db.Column(db.String(256))
-<<<<<<< HEAD
     timestamp = db.Column(db.DateTime, index=True, default=datetime.now(UTC))
     added_by = db.Column(db.String(64))
 
@@ -32,8 +25,3 @@ class Opinion(db.Model):
         for field in ['title', 'text', 'source', 'added_by']:
             if field in data:
                 setattr(self, field, data[field])
-=======
-    images = db.Column(db.JSON)
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    added_by = db.Column(db.String(64))
->>>>>>> 31e6075bf6b15c07b2bcf139bf6353ed248401b9
